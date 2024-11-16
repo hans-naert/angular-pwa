@@ -1,27 +1,35 @@
-# AngularPwa
+# ANGULAR-PWA
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.12.
+Angular project using @angular/material and @angular/pwa.  
+See the documentation on [angular.dev](https://angular.dev/ecosystem/service-workers) for information on service-workers and push messaging in Angular.
 
-## Development server
+## Generate keys
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+`npm run generate-server-key`
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+`npm run build` or `npm run watch`
 
-## Running unit tests
+## Serve
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+serve the build version to test serviceworker: `npm run serve-build`
 
-## Running end-to-end tests
+## Test push
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Use the browser to send the following push message:
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+```json
+{
+    "notification": {     
+       "title": "New Notification!",
+            "data": {"onActionClick":{
+                "default": {
+                 "operation": "openWindow",
+                  "url": "foo"
+                }
+            }
+        }
+    }
+ } 
+```

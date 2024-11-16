@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { SwPush } from '@angular/service-worker';
+import * as keys from '../../server-keys.json';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +12,11 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'angular-pwa';
+
+  constructor(private swPush: SwPush) {}
+
+  ngOnInit() {
+    console.log('App Component Init');
+    this.swPush.requestSubscription({serverPublicKey: keys.public})
+  }
 }
