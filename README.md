@@ -35,4 +35,6 @@ Use the browser to send the following push message:
 ```
 
 ## Azure Notification Hub
-[Send browser (web push) notifications with Azure Notification Hubs | Microsoft Learn](https://learn.microsoft.com/en-us/azure/notification-hubs/browser-push)
+[Send browser (web push) notifications with Azure Notification Hubs | Microsoft Learn](https://learn.microsoft.com/en-us/azure/notification-hubs/browser-push)  
+
+[Example code for using the notification SDK with Javascript](https://github.com/Azure/azure-sdk-for-js/blob/%40azure/notification-hubs_2.0.0/sdk/notificationhubs/notification-hubs/samples-dev/createInstallation.ts)

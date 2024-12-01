@@ -8,6 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "serve-build": "npx http-server -c-1 dist/angular-pwa/browser",
     "generate-server-key": "node ./generate-server-key.js",
+    "generate-installation-id": "node ./generate-installation-id.js",
     "test": "ng test"
   },
   "private": true,

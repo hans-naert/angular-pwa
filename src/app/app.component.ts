@@ -5,6 +5,7 @@ import { SwPush } from '@angular/service-worker';
 import { BrowserNotification, NotificationHubsClient, SendNotificationOptions, createBrowserInstallation, createBrowserRegistrationDescription, createTagExpression } from "@azure/notification-hubs";
 import keys from '../../server-keys.json'
 import { Buffer } from 'buffer';
+import installationId from '../../installation-id.json';
 
 @Component({
   selector: 'app-root',
@@ -53,8 +54,8 @@ export class AppComponent {
 
     const installation = createBrowserInstallation(
       {
-        installationId: "UNIQUE-FOR-INSTALLATION6",
-        userId: "UNIQUE-FOR-USER5",
+        installationId: installationId.uuid,
+        //userId: null,
         tags: ["tag1", "tag2", "tag3", "tag4"],
         pushChannel: {
           endpoint: pushSubscription.endpoint,
